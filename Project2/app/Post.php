@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable= ['title','content'];
-    public function getPosts($session)
+    
+    /* public function getPosts($session)
     {
         if (!$session->has('posts')) {
             $this->createDummyData($session);
@@ -53,5 +54,5 @@ class Post extends Model
             ]
         ];
         $session->put('posts', $posts);
-    }
+    } */
 }
