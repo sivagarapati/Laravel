@@ -19,5 +19,11 @@
     </div>
     <hr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <?php echo e($posts->links()); ?>
+
+        </div>
+    </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
