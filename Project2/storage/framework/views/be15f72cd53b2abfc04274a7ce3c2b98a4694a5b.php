@@ -7,9 +7,14 @@
     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1 class="post-title"><?php echo e($post['title']); ?></h1>
-            <p><?php echo e($post['content']); ?>!</p>
-            <p><a href="<?php echo e(route('blog.post', ['id' => array_search($post, $posts)])); ?>">Read more...</a></p>
+            <h1 class="post-title"><?php echo e($post->title); ?></h1>
+            <p style="font-weight: bold">
+                <?php $__currentLoopData = $post->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    - <?php echo e($tag->name); ?> -
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </p>
+            <p><?php echo e($post->content); ?>!</p>
+            <p><a href="<?php echo e(route('blog.post', ['id' => $post->id])); ?>">Read more...</a></p>
         </div>
     </div>
     <hr>
