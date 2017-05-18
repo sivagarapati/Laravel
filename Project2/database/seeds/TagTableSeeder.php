@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class TagTableSeeder extends Seeder
 {
@@ -17,6 +18,6 @@ class TagTableSeeder extends Seeder
 
         $tag=new \App\Tag();
         $tag->name='Industry News';
-        $tag->save();
+        $tag->save(); 
     }
 }
